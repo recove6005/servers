@@ -22,7 +22,10 @@ const __dirname = path.dirname(__filename);
 
 // middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: 'https://daoldraft.web.app',
+    credentials: true,
+}));
 app.use(bodyParser.json());
 app.use(
     session({
